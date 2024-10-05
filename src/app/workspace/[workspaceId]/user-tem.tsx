@@ -4,7 +4,7 @@ import React from 'react'
 import { Id } from '../../../../convex/_generated/dataModel'
 import { cva, VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { useWorkspaceId } from '@/hooks/use-workspace-id'
 
 
@@ -31,9 +31,10 @@ interface UserItemProps {
     variant?: VariantProps<typeof userItemVariants>["variant"];
 };
 
-export const UserItem = ({ id, label = "Member", image, variant }: UserItemProps) => {
+export const UserItem = ({label = "Member", image, variant }: UserItemProps) => {
+    // export const UserItem = ({ id, label = "Member", image, variant }: UserItemProps) => {
 
-    const workspaceId = useWorkspaceId();
+    // const workspaceId = useWorkspaceId();
     const avatarFallback = label.charAt(0).toUpperCase();
 
     return (

@@ -33,26 +33,34 @@ interface MessageProps {
     threadTimeStamp?: number;
 
 }
+// export const Message = ({
+//     id,
+//     isAuthor,
+//     memberId,
+//     authorImage,
+//     authorName = "Member",
+//     reactions,
+//     body,
+//     image,
+//     createdAt,
+//     updatedAt,
+//     isEditing,
+//     isCompact,
+//     setEditingId,
+//     hideThreadButton,
+//     threadCount,
+//     threadImage,
+//     threadTimeStamp,
 
+// }: MessageProps) => {
 export const Message = ({
-    id,
-    isAuthor,
-    memberId,
     authorImage,
     authorName = "Member",
-    reactions,
     body,
     image,
     createdAt,
     updatedAt,
-    isEditing,
     isCompact,
-    setEditingId,
-    hideThreadButton,
-    threadCount,
-    threadImage,
-    threadTimeStamp,
-
 }: MessageProps) => {
 
     if (isCompact) {

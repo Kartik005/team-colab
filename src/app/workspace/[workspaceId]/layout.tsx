@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/resizable";
 
 import Sidebar from "./sidebar";
-import { Toolbar } from "./toolbar";
+// import { Toolbar } from "./toolbar";
 import { WorkspaceSidebar } from "./workspace-sidebar";
 
 interface WorkspaceIdLayoutProps {

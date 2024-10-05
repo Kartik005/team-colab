@@ -46,7 +46,11 @@ const WorkspaceIdPage = ()=>{
     open, 
     setOpen, 
     router, 
-    workspaceId
+    workspaceId,
+    // vercel said to include these
+    isAdmin,
+    member,
+    memberLoading,
   ]);
 
   if(workspaceLoading || channelsLoading || memberLoading){

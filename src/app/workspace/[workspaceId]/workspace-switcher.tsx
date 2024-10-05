@@ -5,7 +5,6 @@ import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
-    DropdownMenuSeparator,
     DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
 import useGetWorkSpace from "@/features/workspaces/api/use-get-workspace";
@@ -19,9 +18,11 @@ export const WorkspaceSwitcher = () => {
 
     const workspaceId = useWorkspaceId();
     const { data: workspace, isLoading: workspaceLoading } = useGetWorkSpace({ id: workspaceId });
-    const { data: workspaces, isLoading: workspacesLoading } = useGetWorkSpaces();
+    const { data: workspaces } = useGetWorkSpaces();
+    // const { data: workspaces, isLoading: workspacesLoading } = useGetWorkSpaces();
 
-    const [_open, setOpen] = useCreateWorkspaceModal();
+    const [, setOpen] = useCreateWorkspaceModal();
+    // const [_open, setOpen] = useCreateWorkspaceModal();
     // we get our global modalState atom from this
 
     const router = useRouter();

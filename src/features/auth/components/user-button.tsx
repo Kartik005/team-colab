@@ -8,8 +8,8 @@ import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
+    // DropdownMenuLabel,
+    // DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
@@ -33,7 +33,8 @@ const UserButton = () => {
         return null;
     }
 
-    const { image, name } = data;
+    const { name } = data;
+    // const { image, name } = data;
 
     const avatarFallback = name!.charAt(0).toUpperCase();
     

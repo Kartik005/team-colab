@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import useGetWorkSpace from "@/features/workspaces/api/use-get-workspace"
+// import useGetWorkSpace from "@/features/workspaces/api/use-get-workspace"
 import useGetWorkSpaceInfo from "@/features/workspaces/api/use-get-workspace-info"
 import { useJoin } from "@/features/workspaces/api/use-join"
 import { useWorkspaceId } from "@/hooks/use-workspace-id"
@@ -21,7 +21,8 @@ const JoinPage = () => {
 
     const workspaceId = useWorkspaceId();
 
-    const { mutate, isPending } = useJoin();
+    // const { mutate, isPending } = useJoin();
+    const { mutate} = useJoin();
     const { data, isLoading } = useGetWorkSpaceInfo({ id: workspaceId });
 
     const isMember = useMemo( ()=> data?.isMember, [data?.isMember]);

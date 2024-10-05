@@ -8,7 +8,6 @@ import {
     DialogFooter,
     DialogHeader,
     DialogContent,
-    DialogDescription,
     DialogTitle
 } from "@/components/ui/dialog";
 import { DialogClose, DialogTrigger } from "@radix-ui/react-dialog";
@@ -45,7 +44,8 @@ export const Header = ({ name }: HeaderProps) => {
     const { mutate: updateChannel, isPending: isUpdatingChannel } = useUpdateChannel();
     const { mutate: removeChannel, isPending: isRemovingChannel } = useRemoveChannel();
 
-    const handleEditOpen = (value: boolean) => {
+    // const handleEditOpen = (value: boolean) => {
+        const handleEditOpen = (value: boolean) => {
         if (member?.role !== "admin") return;
         setEditOpen(true);
 

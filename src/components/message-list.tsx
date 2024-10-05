@@ -26,17 +26,20 @@ const formatDateLabel = (dateStr: string) => {
     return format(date, "EEEE, MMMM d");
 }
 
+// export const MessageList = ({
+//     memberName,
+//     memberImage,
+//     channelName,
+//     channelCreationTIme,
+//     variant = "channel",
+//     data,
+//     loadMore,
+//     isLoadingMore,
+//     canLoadMore,
+// }: MessageListProps) => {
 
 export const MessageList = ({
-    memberName,
-    memberImage,
-    channelName,
-    channelCreationTIme,
-    variant = "channel",
-    data,
-    loadMore,
-    isLoadingMore,
-    canLoadMore,
+    data
 }: MessageListProps) => {
 
     // group messages by date

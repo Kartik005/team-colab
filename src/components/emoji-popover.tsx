@@ -10,18 +10,20 @@ import {
     TooltipProvider,
     TooltipTrigger
 } from "./ui/tooltip"
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 interface EmojiPopoverProps {
     children: React.ReactNode;
     hint?: string;
     onEmojiSelect: (emoji: any) => void;
 }
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 export const EmojiPopover = ({ children, hint = "Emoji", onEmojiSelect }: EmojiPopoverProps) => {
 
     const [popoverOpen, setPopoverOpen] = useState(false);
     const [tooltipOpen, setTooltipOpen] = useState(false);
 
+    /* eslint-disable @typescript-eslint/no-explicit-any */
     const onSelect = (emoji : any) =>{
         onEmojiSelect(emoji);
         setPopoverOpen(false);
@@ -30,7 +32,7 @@ export const EmojiPopover = ({ children, hint = "Emoji", onEmojiSelect }: EmojiP
             setTooltipOpen(false);
         }, 500)
     }
-
+/* eslint-enable @typescript-eslint/no-explicit-any */
     return (
         <TooltipProvider>
             <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>

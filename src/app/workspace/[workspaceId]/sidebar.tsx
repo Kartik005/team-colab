@@ -1,7 +1,7 @@
 import UserButton from "@/features/auth/components/user-button"
 import { WorkspaceSwitcher } from "./workspace-switcher"
-import { SidebarButton } from "./sidebar-button"
-import { BellIcon, Home, MessageSquare, MoreHorizontal } from "lucide-react"
+// import { SidebarButton } from "./sidebar-button"
+// import { BellIcon, Home, MessageSquare, MoreHorizontal } from "lucide-react"
 
 
 // sidebar doesn't get rerendered while developing, 

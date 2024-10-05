@@ -14,7 +14,6 @@ import { cn } from "@/lib/utils";
 import { EmojiPopover } from "./emoji-popover";
 import Image from "next/image";
 
-
 //** quill does server side rendering, so we import our editor dynamically in chat-input.tsx
 
 
@@ -159,13 +158,14 @@ const Editor = ({
 
     const isEmpty = !image && text.replace(/<(.|\n)*?>/g, "").trim().length === 0; // regex to remove null chars or whitespace
 
-
+    // disabling rule for this block
+/* eslint-disable @typescript-eslint/no-explicit-any */
     const onEmojiSelect = (emoji: any) => {
         const quill = quillRef.current;
 
         quill?.insertText(quill?.getSelection()?.index || 0, emoji.native);
     }
-
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
     return (
         <div className="flex flex-col">

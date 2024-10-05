@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import useGetWorkSpace from "@/features/workspaces/api/use-get-workspace";
-import { useWorkspaceId } from "@/hooks/use-workspace-id";
+// import useGetWorkSpace from "@/features/workspaces/api/use-get-workspace";
+// import { useWorkspaceId } from "@/hooks/use-workspace-id";
 import {
     DropdownMenu,
     DropdownMenuTrigger,
@@ -8,9 +8,10 @@ import {
     DropdownMenuItem,
 } from "@radix-ui/react-dropdown-menu";
 
-import { Hint } from "@/components/hint";
+// import { Hint } from "@/components/hint";
 
-import { ChevronDown, ListFilter, SquarePen } from "lucide-react";
+import { ChevronDown} from "lucide-react";
+// import { ChevronDown, ListFilter, SquarePen } from "lucide-react";
 import { Doc } from "../../../../convex/_generated/dataModel";
 import { PreferencesModal } from "./preferences-modal";
 import { useState } from "react";

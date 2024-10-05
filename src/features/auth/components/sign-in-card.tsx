@@ -13,7 +13,7 @@ import {
   CardHeader,
   CardDescription,
   CardContent,
-  CardTitle
+  // CardTitle
 } from '@/components/ui/card'
 
 
@@ -122,7 +122,7 @@ const SignInCard = ({ setState }: SignInCardProps) => {
           </Button>
         </div>
         <p className=' text-xs text-muted-foreground'>
-          Don't have an account?
+        Don&apos;t have an account?
           <span
             onClick={() => setState("signUp")}
             className='text-sky-700 hover:underline cursor-pointer'>Sign Up</span>

@@ -1,13 +1,17 @@
+// import {
+//     Dialog,
+//     DialogFooter,
+//     DialogHeader,
+//     DialogContent,
+//     DialogDescription,
+//     DialogTitle
+// } from "@/components/ui/dialog";
 import {
     Dialog,
-    DialogFooter,
-    DialogHeader,
     DialogContent,
-    DialogDescription,
-    DialogTitle
 } from "@/components/ui/dialog";
 import { DialogTrigger } from "@radix-ui/react-dialog";
-import { XIcon } from "lucide-react";
+// import { XIcon } from "lucide-react";
 
 interface ThumbnailProps {
     url: string | null | undefined;
