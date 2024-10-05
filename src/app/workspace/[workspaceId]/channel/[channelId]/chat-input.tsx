@@ -53,7 +53,9 @@ export const ChatInput = ({ placeholder }: ChatInputProps) => {
             };
 
             if (image) {
-                const url = await generateUploadUrl({}, { throwError: true });
+                const url = await generateUploadUrl({ throwError: true });
+                // this change is made along with removing the {} in generateUploadUrl
+                // const url = await generateUploadUrl({}, { throwError: true });
                 if (!url) {
                     throw new Error("image url not found");
                 }

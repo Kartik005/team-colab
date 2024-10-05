@@ -29,8 +29,9 @@ export const useGenerateUploadUrl = () => {
 
     const mutation = useMutation(api.upload.generatedUploadUrl);
 
-    // const mutate = useCallback(async (values: {}, options?: Options) => {
-        const mutate = useCallback(async (options?: Options) => {
+        const mutate = useCallback(async ( options?: Options) => {
+            //this change is made along with the geenrate image in chat input 
+            // const mutate = useCallback(async (values: {}, options?: Options) => {
         try {
             setData(null);
             setError(null);
