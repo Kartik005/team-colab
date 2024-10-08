@@ -7,7 +7,7 @@ import { useChannelId } from "@/hooks/use-channel-id";
 import { toast } from "sonner";
 import { useGenerateUploadUrl } from "@/components/upload/api/use-generate-upload-url";
 import { Id } from "../../../../../../convex/_generated/dataModel";
-
+import imageCompression from 'browser-image-compression';
 
 const Editor = dynamic(() => import("@/components/editor"), { ssr: false });
 
@@ -27,8 +27,8 @@ type createMessageValues = {
 export const ChatInput = ({ placeholder }: ChatInputProps) => {
 
     const [editorKey, setEditorKey] = useState(0);
-    // const [isPending, setIsPending] = useState(false);
-    const [, setIsPending] = useState(false);
+    const [isPending, setIsPending] = useState(false);
+    // const [, setIsPending] = useState(false);
 
     const editorRef = useRef<Quill | null>(null);
     const workspaceId = useWorkspaceId();
@@ -53,6 +53,13 @@ export const ChatInput = ({ placeholder }: ChatInputProps) => {
             };
 
             if (image) {
+                
+                const compressedImage = await imageCompression(image, {
+                    maxSizeMB: 1, // Set the maximum size (1MB in this case)
+                    maxWidthOrHeight: 1024, // Maximum width or height to resize the image
+                    useWebWorker: true, // Enable compression in a web worker thread
+                });
+
                 const url = await generateUploadUrl({ throwError: true });
                 // this change is made along with removing the {} in generateUploadUrl
                 // const url = await generateUploadUrl({}, { throwError: true });
@@ -62,20 +69,20 @@ export const ChatInput = ({ placeholder }: ChatInputProps) => {
                 // fetch api call
                 const result = await fetch(url, {
                     method: "POST",
-                    headers: { "Content-type": image.type },
-                    body: image,
+                    headers: { "Content-type": compressedImage.type },
+                    body: compressedImage,
                 });
 
                 if (!result.ok) {
                     throw new Error("Failed to upload image!");
                 }
-                
+
                 const { storageId } = await result.json();
                 values.image = storageId;
             }
 
             await createMessage(
- 
+
                 values,
                 { throwError: true });
 
@@ -101,7 +108,7 @@ export const ChatInput = ({ placeholder }: ChatInputProps) => {
                 key={editorKey} // when key changes, editor is rerendered newly
                 placeholder={placeholder}
                 onSubmit={handleSubmit}
-                disabled={false}
+                disabled={isPending}
                 innerRef={editorRef}
             />
         </div>
